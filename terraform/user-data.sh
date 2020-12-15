@@ -11,13 +11,13 @@ function main {
   declare -r url=$1 playbook=$2
 
   # Ensure the instance is up-to-date.
-  yum update -y
+  sudo apt-get update -y
 
   # Install required packages.
-  yum install -y git
+  sudo apt-get install -y git
 
   # Install Ansible! We use pip as the EPEL package runs on Python 2.6...
-  pip install ansible
+  sudo apt-get install ansible -y
 
   # Download our Ansible repository and run the given playbook. Pip installs
   # executables into a directory not in the root users $PATH.
@@ -27,5 +27,6 @@ function main {
 
 # 🚀
 main \
-  'https://github.com/sjparkinson/terraform-ansible-example.git' \
+  'https://github.com/AndrewsOwusu/terraform-ansible-example.git' \
   'ansible/local.yml'
+
