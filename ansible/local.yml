@@ -4,9 +4,4 @@
 # Apply common configuration to all hosts.
 - hosts: localhost
   roles:
-    - common
-
-# Configure the WordPress application nodes.
-- hosts: localhost
-  roles:
-    - wordpress
+    - nginx
